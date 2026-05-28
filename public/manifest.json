@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Sentinel",
+  "version": "1.0.0",
+  "description": "AI-powered security scanner and Q&A for GitHub repositories. Detects threats, data collection, and malware before you install.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://github.com/*",
+    "http://localhost:8000/*"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "GitHub Sentinel"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}
