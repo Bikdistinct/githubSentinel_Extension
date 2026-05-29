@@ -1,1 +1,0 @@
-chrome.runtime.onMessage.addListener(t=>{t.type==="OPEN_POPUP"&&t.url&&chrome.storage.session.set({pendingUrl:t.url})});chrome.tabs.onUpdated.addListener((t,o,e)=>{if(o.status!=="complete"||!e.url)return;const r=/^https:\/\/github\.com\/[^/]+\/[^/]+/.test(e.url);chrome.action.setBadgeText({tabId:t,text:r?"●":""}),chrome.action.setBadgeBackgroundColor({tabId:t,color:"#6366f1"})});
