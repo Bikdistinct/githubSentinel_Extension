@@ -1,6 +1,7 @@
 import type { RepoAnalysis, RepoCheckResult, ChatMessage, AnalysisHistoryItem } from "../types";
 
-const API_BASE = "http://localhost:8000/api/v1";
+// const API_BASE = "http://localhost:8000/api/v1";
+const API_BASE = "https://githubsentinel.onrender.com";
 
 /**
  * Community threat check.
